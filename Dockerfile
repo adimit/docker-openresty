@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV ngx_config="/usr/local/openresty/etc/nginx"
+ENV ngx_config="/usr/local/openresty/nginx/conf"
 ENV www_root="/usr/local/openresty/nginx/html"
 ENV openresty="ngx_openresty-1.9.3.1"
 
@@ -23,6 +23,9 @@ RUN rm -rf /${openresty}*
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /usr/local/openresty/nginx/logs/access.log
 RUN ln -sf /dev/stderr /usr/local/openresty/nginx/logs/error.log
+
+COPY ./nginx.openresty.conf ${ngx_config}/nginx.conf
+RUN mkdir -p ${ngx_config}/include
 
 EXPOSE 80 443
 
