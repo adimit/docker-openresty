@@ -1,7 +1,6 @@
 FROM debian:jessie
 
 ENV ngx_config="/usr/local/openresty/etc/nginx"
-ENV ngx_cmd="/usr/local/openresty/nginx/sbin/nginx"
 ENV www_root="/usr/local/openresty/nginx/html"
 ENV openresty="ngx_openresty-1.9.3.1"
 
