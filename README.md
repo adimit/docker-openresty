@@ -10,4 +10,4 @@ with [LuaJIT](http://luajit.org/).
 Environment variable `$ngx_config` contains the configuration directory, and
 `$www_root` the `html` directory for your web files.
 
-All `.conf` files from `${ngx_config}/include` are automatically included, so just chuck them in there.
+All `.conf` files from `${ngx_include}/` are automatically included, so just chuck them in there.
