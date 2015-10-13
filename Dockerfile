@@ -18,6 +18,7 @@ RUN curl -OL https://openresty.org/download/${openresty}.tar.gz \
 
 RUN apt-get remove -qy $builddebs
 RUN apt-get autoremove -qy
+RUN rm -rf /${openresty}*
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /usr/local/openresty/nginx/logs/access.log
