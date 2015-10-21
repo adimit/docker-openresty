@@ -7,7 +7,8 @@ This image on {[docker](https://hub.docker.com/r/adimit/openresty/),[git](https:
 Docker image for [openresty](http://openresty.org/), [nginx](http://nginx.org)
 with [LuaJIT](http://luajit.org/).
 
-Environment variable `$ngx_config` contains the configuration directory, and
-`$www_root` the `html` directory for your web files.
-
-All `.conf` files from `${ngx_include}/` are automatically included, so just chuck them in there.
+Environment variables:
+* `$ngx_config`: The base `nginx.conf`.
+* `$www_root`: The web root, with all of your `html` files.
+* `$ngx_include`: A directory for additional configuration files, which will get
+   included by the standard `$ngx_config`
